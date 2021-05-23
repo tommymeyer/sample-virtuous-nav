@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="meyer_reset2.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <title>Virtuous Nav Sample</title>
+</head>
+<body>
+  <nav>
+    <div class="logo-container">
+      <a href="#">
+        <img src="assets/icons/virtuous-logo.svg" alt="Virtuous Logo Icon">
+      </a>
+    </div>
+
+    <ul class="nav-dropdowns-container">
+      <li class="nav-item">
+        <button class="btn-nav">
+          <img src="assets/icons/crm-icon.svg" alt="CRM Dropdown Icon">
+          <span>CRM</span>
+        </button>
+
+        <ul class="crm-dropdown dropdown">
+          <li>Contacts</li>
+          <li>Contact Queue</li>
+          <li>Memberships</li>
+          <li>Volunteers</li>
+          <li>Events</li>
+          <li>Tags</li>
+          <li class="task-counter">Tasks</li>
+          <hr />
+          <ul class="add-import-contacts-list">
+            <li>Add Contact</li>
+            <li>Import Contacts</li>
+          </ul>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <button class="btn-nav">
+          <img src="assets/icons/giving-icon.svg" alt="Giving Dropdown Icon">
+          <span>Giving</span>
+        </button>
+
+        <ul class="giving-dropdown dropdown">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <button class="btn-nav">
+          <img src="assets/icons/marketing-icon.svg" alt="Marketing Dropdown Icon">
+          <span>Marketing</span>
+        </button>
+
+        <ul class="marketing-dropdown dropdown">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <button class="btn-nav">
+          <img src="assets/icons/signals-icon.svg" alt="Signals Dropdown Icon">
+          <span>Signals</span>
+        </button>
+
+        <ul class="signals-dropdown dropdown">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <ul>
+            <li></li>
+            <li></li>
+          </ul>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="actions-dropdowns-container">
+      <li class="nav-item">
+        <button class="btn-nav">
+          <span>Tools</span>
+        </button>
+        <ul class="tools-dropdown dropdown"></ul>
+      </li>
+      <li class="nav-item">
+        <button class="btn-nav">
+          <span>Data</span>
+        </button>
+        <ul class="data-dropdown dropdown"></ul>
+      </li>
+      <li class="nav-item">
+        <button class="btn-nav">
+          <img src="assets/icons/virtuous-plus-icon.svg" alt="">
+          <span class="quick-actions-copy">Quick Actions</span>
+        </button>
+        <ul class="quick-actions-dropdown dropdown">
+          <li class="contact-search-item">
+            <img src="assets/icons/search-input-icon.svg" alt="" class="search-input-icon">
+            <input type="search" id="contact-search" name="contact-search" aria-label="Search contacts" placeholder="Search Contacts">
+            <img src="assets/icons/enter-search-icon.svg" alt="" class="enter-search-icon">
+          </li>
+          <li>Add New Contact</li>
+          <li>Import Gifts & Receipts</li>
+          <li>Creat a Report</li>
+          <li>Build a Query</li>
+          <li class="add-action-item">
+            <button class="add-action-btn" id="add-action-btn" onclick="showAndHideModal()">Add Quick Action <img src="assets/icons/filled-plus-icon.svg" id="filled-plus-icon" alt="Open and Close icon"></button>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="profile-tools">
+      <li>
+        <button>
+          <img src="assets/icons/search-icon.svg" alt="">
+        </button>
+      </li>
+      <li>
+        <button>
+          <img src="assets/icons/learning-icon.svg" alt="">
+        </button>
+      </li>
+      <li>
+        <button>
+          <img src="assets/icons/notifications-icon.svg" alt="">
+        </button>
+      </li>
+      <li class="profile-settings nav-item">
+        <button>
+          <img src="assets/images/profile-image.jpg" alt="">
+        </button>
+        <ul class="dropdown">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="modal" id="modal" style="display: none;">
+    <button onclick="showAndHideModal()">
+      <img src="assets/icons/close-icon.svg" alt="">
+    </button>
+    <article>
+      <h2>Add Quick Action</h2>
+      <ul>
+        <li>Add New Contact</li>
+        <li>Import Gifts & Receipts</li>
+        <li>Creat a Report</li>
+        <li>Build a Query</li>
+      </ul>
+    </article>
+  </div>
+
+  <script>
+    function showAndHideModal() {
+      const modal = document.getElementById("modal");
+      const btnPlusImg = document.getElementById("filled-plus-icon");
+      if (modal.style.display === "none") {
+        modal.style.display = "block";
+        btnPlusImg.style.transform = "rotate(45deg)";
+      } else {
+        modal.style.display = "none";
+        btnPlusImg.style.transform = "rotate(0)";
+      }
+    }
+  </script>
+</body>
+</html>
